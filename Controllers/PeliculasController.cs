@@ -54,14 +54,14 @@ namespace GeneroInfo.API.Controllers
 
             genero.Peliculas.Add(nuevoPeliculas);
 
-            return CreatedAtRoute(//CreatedAtRoute es para q devuelva 201, el 200 de post.
-                "GetPeliculas", //El primer parámetro es el Name del endpoint que hace el Get
-                new //El segundo los parametros q necesita ese endpoint
+            return CreatedAtRoute(
+                "GetPeliculas", 
+                new 
                 {
                     idGenero,
                     idPeliculas = nuevoPeliculas.Id
                 },
-                nuevoPeliculas);//El tercero es el objeto creado. 
+                nuevoPeliculas); 
         }
 
         [HttpPut("{idPeliculas}")]
